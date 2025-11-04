@@ -13,3 +13,9 @@
 
 # tools are the weapons which an LLM recieves to interact with it's environment ex. web search || image generation || retrieval || API
 # need to tell LLM that this tool exists and this is how we use it
+
+# ReACT --> synergizing reasoning and Acting in Language Models 
+# started with chain of thought prompting 
+#  LLM + Reasoning + Acting  --> T(though) A(Action) O(Observation)
+# agents are LLMs equipped with tools || using react framework agents interact with external environment to add additional information
+# into their reasoning
