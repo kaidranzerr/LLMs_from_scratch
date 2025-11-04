@@ -10,3 +10,6 @@
 
 # an ability is emergent if it is not present in smaller models but present in larger models.
 # parameters increases --> size increases --> something unexpected happens 
+
+# tools are the weapons which an LLM recieves to interact with it's environment ex. web search || image generation || retrieval || API
+# need to tell LLM that this tool exists and this is how we use it
