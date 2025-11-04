@@ -6,4 +6,7 @@
 # an agent has agency --> ability to interact with it's environment
 
 # agency level --> amount of control that agent has || highest multi agent --> one agentic workflow starts another agentic workflow
-# language models are the brain of agents
+# language models are the brain of agents  
+
+# an ability is emergent if it is not present in smaller models but present in larger models.
+# parameters increases --> size increases --> something unexpected happens 
