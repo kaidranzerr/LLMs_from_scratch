@@ -19,3 +19,6 @@
 #  LLM + Reasoning + Acting  --> T(though) A(Action) O(Observation)
 # agents are LLMs equipped with tools || using react framework agents interact with external environment to add additional information
 # into their reasoning
+
+# agentic feameworks --> Code(Langgraph , langchain , LlamaIndex , Smolagents , Autogen) 
+# , Low Code(crew AI , Langflow , n8n , Agno) , No-Code(Google Vortex AI Agent , Microsoft Copilot,  OpenAI custom GPT , Manus) 
