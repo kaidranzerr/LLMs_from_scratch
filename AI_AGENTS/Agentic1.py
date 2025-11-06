@@ -34,3 +34,5 @@
 # toolCallingAgent --> lower complexity || structured and predictable | simple structured tasks || lower error risk
 # codeAgent --> Higher complexity || high flexible and dynamic || complex unstructured tasks || can have runtime errors
 
+# openTelemetry--> standard for instrumenting agent runs allowing seamless inspection and logging. With the help of Langfuse and SmolAgent
+# Instrumentor we can easily track and analyze on agent behalf
