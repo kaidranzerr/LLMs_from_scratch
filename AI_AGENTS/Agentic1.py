@@ -16,9 +16,21 @@
 
 # ReACT --> synergizing reasoning and Acting in Language Models 
 # started with chain of thought prompting 
-#  LLM + Reasoning + Acting  --> T(though) A(Action) O(Observation)
+#  LLM + Reasoning + Acting  --> T(thought) A(Action) O(Observation)
 # agents are LLMs equipped with tools || using react framework agents interact with external environment to add additional information
 # into their reasoning
 
 # agentic feameworks --> Code(Langgraph , langchain , LlamaIndex , Smolagents , Autogen) 
 # , Low Code(crew AI , Langflow , n8n , Agno) , No-Code(Google Vortex AI Agent , Microsoft Copilot,  OpenAI custom GPT , Manus) 
+
+# smol agents is open-source python library designed to make and run agents using just a few lines of code
+# smolagents --> (vision + browser agents , code agents , tool calling agents , tools , agents)
+# smolagents focuses on tool calls in code instead of json
+
+# provider are those companies which hosts open source models
+
+# conversation window buffer --> how much of past memory you want to retain
+# smolagents focuses on tool calls in code instead of json
+# toolCallingAgent --> lower complexity || structured and predictable | simple structured tasks || lower error risk
+# codeAgent --> Higher complexity || high flexible and dynamic || complex unstructured tasks || can have runtime errors
+
