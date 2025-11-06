@@ -36,3 +36,5 @@
 
 # openTelemetry--> standard for instrumenting agent runs allowing seamless inspection and logging. With the help of Langfuse and SmolAgent
 # Instrumentor we can easily track and analyze on agent behalf
+
+# Browser and Multi Agents --> reduces cost and latency each agent is more focused on 1 task hence more performant
