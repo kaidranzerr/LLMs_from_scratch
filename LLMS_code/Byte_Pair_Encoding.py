@@ -57,3 +57,16 @@ def create_dataloader_v1(txt , batch_size=4 , max_length=256 , stride=128 , shuf
         drop_last=drop_last,
         num_workers=num_workers
     )
+    return dataloader
+
+import torch
+datalaoder = create_dataloader_v1(
+    raw_text , batch_size=1 , max_length= 4 , stride=1, shuffle=False
+)
+
+data_iter = iter(datalaoder)
+first_batch = next(data_iter)
+print(first_batch)
+
+second_batch = next(data_iter)
+print(second_batch)
