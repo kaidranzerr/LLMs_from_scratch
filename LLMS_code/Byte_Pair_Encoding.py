@@ -15,6 +15,12 @@ tokenizer = tiktoken.get_encoding("gpt2")
 text = ''
 
 integers = tokenizer.encode(text , allowed_special={"<|endoftext|>"})
-
-
+ 
+enc_text = tokenizer.encode(text)
+enc_sample = enc_text[50:]
 # create input target pair
+# it's an autoregresive model --> last output becomes current input
+context_size = 4 # model is trained to look at sequence of 4
+x = enc_sample[:context_size]
+y = enc_sample[1:context_size+1]
+
