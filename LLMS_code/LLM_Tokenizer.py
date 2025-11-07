@@ -45,3 +45,10 @@ class SimpleTokenizerV1:
         # replace spaces before specified punctuations
         text = re.sub(r'\s+([,.!?"()\])' , 'r\1' , text)
         return text 
+
+tokenizer = SimpleTokenizerV1(vocab)
+text = ''
+ids = tokenizer.encode(text)
+print(ids)
+
+# special context tokens to deal with words which might not be present in vocab
