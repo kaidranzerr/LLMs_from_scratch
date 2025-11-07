@@ -15,3 +15,6 @@ tokenizer = tiktoken.get_encoding("gpt2")
 text = ''
 
 integers = tokenizer.encode(text , allowed_special={"<|endoftext|>"})
+
+
+# create input target pair
