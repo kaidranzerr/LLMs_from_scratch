@@ -21,3 +21,8 @@ dataloader = create_dataloader_v1(
 )
 data_iter = next(dataloader)
 input , targets = next(data_iter)
+token_embeddings = token_embedding_layer(input)
+context_length = max_length
+pos_embedding_layer = torch.nn.Embedding(context_length , output_dim)
+pos_embeddings = pos_embedding_layer(torch.arange(max_length))
+input_embeddings = token_embeddings + pos_embeddings
