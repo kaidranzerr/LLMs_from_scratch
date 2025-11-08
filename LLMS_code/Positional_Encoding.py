@@ -10,3 +10,14 @@
 
 # Absolute --> suitable when fixed order of token is crucial such as sequence generation
 # Relative --> Suitable for tasks like language modelling over long sequence
+
+vocab_size = 50257
+output_dim = 256
+
+token_embedding_layer = torch.nn.Embeddings(vocab_size , output_dim)
+max_length = 4
+dataloader = create_dataloader_v1(
+    raw_text , batch_size=8 , max_length = max_length , stride=max_length,shuffle = False
+)
+data_iter = next(dataloader)
+input , targets = next(data_iter)
