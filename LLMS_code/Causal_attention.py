@@ -3,7 +3,7 @@
 # this is contrast to any self attention mechanism which allows access to entire input sequence at once 
 # the causal attention mechanism ensures that model only factors in tokens that occur at or before the current token in the sequence
 # we mask out future tokens which comes after current token in input text 
-
+import torch
 queries = sa_v2.W_query(inputs)
 keys = sa_v2.W_key(inputs)
 attn_scores = queries @ keys.T 

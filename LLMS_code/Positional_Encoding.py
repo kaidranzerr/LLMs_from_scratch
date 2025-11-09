@@ -10,7 +10,7 @@
 
 # Absolute --> suitable when fixed order of token is crucial such as sequence generation
 # Relative --> Suitable for tasks like language modelling over long sequence
-
+import torch
 vocab_size = 50257
 output_dim = 256
 

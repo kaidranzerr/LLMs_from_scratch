@@ -7,7 +7,7 @@
 
 # BYTE PAIR ENCODING -->> subword tokenization algo || most common pair of consecutive bytes of data is replaced with a byte that 
 # does not occur in data
-
+import torch
 # preprocessing --> add </w> at the end of each word
 # then split words into characters and count their frequency
 import tiktoken

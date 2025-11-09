@@ -1,7 +1,7 @@
 # representing words numerically
 # semantically similar words should have similar vectors
 # we gonna be needing token IDs | Vector Dimension | Vocab size
-
+import torch
 # creating token embeddings
 input_ids = torch.tensor([2,3,5,6])
 vocab_size = 6

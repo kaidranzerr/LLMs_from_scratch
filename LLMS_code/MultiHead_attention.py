@@ -2,7 +2,7 @@
 # stacking multiple single head attention layers
 # 1.Implementing multi-head attention involves creating multiple instances of self-atttention mechanism each with it's own weights and
 # then combining their outputs , this can be computationally intensive but it makes LLMs powerful at complex pattern recognition tasks
-
+import torch
 # extending single head attention to multi head attention 
 class MultiHeadAttentionWrapper(nn.Module):
     def __init__(self , d_in , d_out , context_length , dropout , num_heads , qkv_bias=False):

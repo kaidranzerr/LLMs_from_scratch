@@ -13,7 +13,7 @@
 # the element or token which we are looking at right now is also called query
 # dot product is used to check alignment between the 2 vectors || higher the dot product higher the similarity and attention scores between 2 elements
 
-
+import torch
 query = inputs[1] # 2nd input token is the query
 attn_scores_2 = torch.empty(inputs.shape[0])
 for i,x_i in enumerate(shape):

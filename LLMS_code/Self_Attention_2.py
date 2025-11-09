@@ -5,7 +5,7 @@
 # 3. these trainable weight matrices are crucial so that model produces good context vectors
 # we will implement self attention mechanism step by step by introducing 3 trainable weight matrices: query , key , value 
 # these 3 matirces are used to project the embedded input tokens into query , key ,value vectors
-
+import torch
 x_2 = inputs[1]
 d_in = inputs.shape[1]
 d_out = 2 

@@ -1,0 +1,1 @@
+# the role of attention is to convert embedding vectors to context vectors 
