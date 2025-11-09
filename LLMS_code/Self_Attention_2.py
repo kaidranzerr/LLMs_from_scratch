@@ -55,3 +55,21 @@ class SelfAttention_v1(nn.Module):
         attn_weights = torch.softmax( attn_scores / keys.shape[-1] ** 0.5 , dim = -1)
         context_vec = attn_weights @ values 
         return context_vec 
+    
+class SelfAttention_V2(nn.Module):
+    def __init__(self , d_in , d_out):
+        super().__init__()
+        self.W_query = nn.Linear(d_in , d_out , qkv_bias = False)
+        self.W_key = nn.Linear(d_in , d_out , qkv_bias = False)
+        self.W_value = nn.Linear(d_in , d_out , qkv_bias = False)
+
+
+    def forward(self , x):
+        keys = self.W_key(x)
+        queries = self.W_query(values)
+        values = self.W_values(x)
+
+        attn_scores = queries @ keys.T 
+        attn_weights = torch.softmax(attn_scores / keys.shape[-1] ** 0.5 ,dim = -1)
+        context_vec = attn_weights @ values 
+        return context_vec 
