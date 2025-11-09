@@ -48,3 +48,8 @@ print(attn_scores)
 # matrix multi
 attn_scores = inputs @ inputs.T 
 print(attn_scores)
+
+attn_weights = torch.softmax(attn_scores , dim = -1) # implementing softmax to each row
+
+# computing the context vectors 
+all_context_vectors = attn_weights @ inputs 
