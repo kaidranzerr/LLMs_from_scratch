@@ -23,3 +23,28 @@ print(attn_scores_2)
 # next step is normalization --> to obtain attention weights that sum up to 1
 attn_scores_2_tmp = attn_scores_2 / attn_scores_2.sum()
 # using softmax is more advisable 
+
+def softmax_naive(x):
+    return torch.exp(x) / torch.exp(x).sum(dim=0)
+attn_scores_2_naive = softmax_naive(attn_scores_2)
+
+# pytorch implementation of softmax
+attn_weights_2 = torch.softmax(attn_scores_2 , dim=0)
+# after computing the normalized attention weights we calculate the context vectors by multiplying the embedded input tokens with
+# corresponding attention weights and the summing the resultant vectors 
+
+query = inputs[1]
+context_vector_2 = torch.zeros(query.shape)
+for i,x_ in enumerate(inputs):
+    context_vec_2 += attn_weights_2[i] * x_i 
+
+
+attn_scores = torch.empty(6,6)
+for i,x_i in enumerate(inputs):
+    for j , x_j in enumerate(inputs):
+        attn_scores[i , j] = torch.dot(x_i , x_j)
+print(attn_scores) 
+
+# matrix multi
+attn_scores = inputs @ inputs.T 
+print(attn_scores)
