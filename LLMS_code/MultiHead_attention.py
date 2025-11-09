@@ -50,4 +50,5 @@ class MultiHeadAttention(nn.Module):
         attn_weights = self.dropout(attn_weights)
         context_vec = (attn_weights @ values).transpose(1,2)
         return context_vec
-        
+        # formulas for attention score --> queries * keys.T
+        # context_vector == attention weights * values
