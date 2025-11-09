@@ -73,3 +73,8 @@ class SelfAttention_V2(nn.Module):
         attn_weights = torch.softmax(attn_scores / keys.shape[-1] ** 0.5 ,dim = -1)
         context_vec = attn_weights @ values 
         return context_vec 
+    
+# query is the current token model focuses on 
+# in attention mechanism each item in an input sequence has a key. Keys are used to match with query
+# value --> represents actual content or representation of the input items , once model determines which keys are most relevant
+# to query it retrieves corresponding values 
