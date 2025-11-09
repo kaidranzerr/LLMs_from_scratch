@@ -66,4 +66,4 @@ class CausalAttention(nn.Module):
         attn_weights = torch.softmax(attn_scores / keys.shape[-1]**0.5 , dim=-1)
         attn_weights = self.dropout(attn_weights) 
         context_vec = attn_weights @ values
-        return context_vec
+        return context_vec 
