@@ -31,3 +31,7 @@ class LayerNorm(nn.Module):
         var = x.var(dim=-1 , keepdim=True , unbiased=False)
         norm_x = (x-mean) / torch.sqrt(var+self.eps)
         return self.scale * norm_x + self.shift 
+    
+# scale and shift are 2 trainable parameters which have same dimension as input parameter (finetuning parameters)
+# if unbiased = True we will apply something called Bessels correction which typically divides by n-1 not n to adjust for bias in sample
+# variance estimation
