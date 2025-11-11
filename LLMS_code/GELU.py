@@ -4,6 +4,9 @@
 # GELU is smooth throughout and is differentiable whereas RELU is not 
 # GELU allows for non-zero output for negatve values thus solving dead neuron problem
 
+# The inputs are projected into a 4 times larger space via first linear layer
+# the second layer shrinks again by a factor of 4
+# expansion and contraction allows for a rich exploration space
 from torch import nn 
 import torch 
 class GELU(nn.Module):
