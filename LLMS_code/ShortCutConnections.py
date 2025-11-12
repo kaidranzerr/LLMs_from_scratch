@@ -36,4 +36,4 @@ def print_gradients(model ,x):
     loss.backward()
     for name , param in model.named_parameters():
         if 'weight' in name:
-            print(f"{name} has gradient mean of {param.grad.abs().mean().item()}")
+            print(f"{name} has gradient mean of {param.grad.abs().mean().item()}") 
