@@ -42,3 +42,5 @@ def generate_text_simple(model , idx , max_new_tokens , context_size):
         idx = torch.cat((idx , idx_next) , dim=1) #(batch , n_tokens+1) appending part is done for the next round
     return idx
 
+decoded_text = tokenizer.decode(out.squeeze(0).tolist())
+print(decoded_text)
