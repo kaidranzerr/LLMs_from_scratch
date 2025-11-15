@@ -37,8 +37,8 @@ def generate_text_simple(model , idx , max_new_tokens , context_size):
         with torch.no_grad():
             logits = model(idx_cond)  ## batch , n_tokens , vocab_size
         logits = logits[: , -1 , :] # extracting the last row from the logits tensor
-        probas = torch.softmax(logits , dim =-1)
-        idx_next = torch.argmax(probas , dim=-1 , keepdim=True)
-        idx = torch.cat((idx , idx_next) , dim=1) #(batch , n_tokens+1)
+        probas = torch.softmax(logits , dim =-1)  # softmax applied to each row
+        idx_next = torch.argmax(probas , dim=-1 , keepdim=True)  # index with highest probability
+        idx = torch.cat((idx , idx_next) , dim=1) #(batch , n_tokens+1) appending part is done for the next round
     return idx
 
