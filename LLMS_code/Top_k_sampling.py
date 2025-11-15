@@ -10,4 +10,6 @@ top_K = 3
 top_logits , top_pos = torch.topk(next_token_logits , top_k)
 # only the top tokens have the oppurtunity to become the next tokens
 
-# logits --> top-k --> logits / temp --> softmax --> sample from multinomial
+# logits --> top-k --> logits / temp --> softmax --> sample from multinomial 
+
+# merge temperature scaling and top-k sampling 
