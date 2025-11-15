@@ -13,3 +13,13 @@ top_logits , top_pos = torch.topk(next_token_logits , top_k)
 # logits --> top-k --> logits / temp --> softmax --> sample from multinomial 
 
 # merge temperature scaling and top-k sampling 
+
+model = GPTModel(GPT_CONFIG_124M)
+torch.save(model.state_dict() , "model.pth")
+
+
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+model = GPTModel(GPT_CONFIG_124M)
+model.load_state_dict(torch.load("model.pth"))
+model.eval()
