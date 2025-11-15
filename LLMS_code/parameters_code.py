@@ -44,3 +44,7 @@ def generate_text_simple(model , idx , max_new_tokens , context_size):
 
 decoded_text = tokenizer.decode(out.squeeze(0).tolist())
 print(decoded_text)
+
+# out: This is assumed to be a PyTorch tensor containing token IDs, likely the output from a language model or a similar process. It often has a shape like [batch_size, sequence_length].
+# .squeeze(0): This operation removes the dimension of size 1 at the 0th position (the batch dimension). This is necessary because the decode method typically expects a single list of token IDs, not a batch.
+# .tolist(): This converts the PyTorch tensor (after squeezing) into a standard Python list of integers, which the tokenizer.decode() method can process.
