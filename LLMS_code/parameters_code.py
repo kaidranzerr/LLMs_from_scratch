@@ -25,3 +25,6 @@ class GPTModel(nn.Module):
         x = self.final_norm(x)
         logits = self.out_head(x)
         return logits 
+    
+total_params = sum(p.numel() for p in model.parameters())
+
