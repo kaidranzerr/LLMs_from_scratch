@@ -27,4 +27,18 @@ class GPTModel(nn.Module):
         return logits 
     
 total_params = sum(p.numel() for p in model.parameters())
+# .numel() returns total number of elements in given tensor
+# generate text from output tensor
+
+def generate_text_simple(model , idx , max_new_tokens , context_size):
+    for _ in range(max_new_tokens):
+        idx_cond = idx[: , -context_size:] # restricts the input so we only look at tokens == context size
+    # get the predictions
+        with torch.no_grad():
+            logits = model(idx_cond)  ## batch , n_tokens , vocab_size
+        logits = logits[: , -1 , :] # extracting the last row from the logits tensor
+        probas = torch.softmax(logits , dim =-1)
+        idx_next = torch.argmax(probas , dim=-1 , keepdim=True)
+        idx = torch.cat((idx , idx_next) , dim=1) #(batch , n_tokens+1)
+    return idx
 
