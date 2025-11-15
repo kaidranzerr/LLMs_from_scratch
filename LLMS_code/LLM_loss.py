@@ -25,3 +25,22 @@ target_probas_1 = probas[text_idx , [0,1,2] , targets[text_idx]]
 text_idx = 1
 target_probas_2 = probas[text_idx , [0,1,2] , targets[text_idx]]
 
+# compute logarithm and also concatenate
+log_probas = torch.log(torch.cat((target_probas_1 , target_probas_2)))
+print(log_probas)
+avg_log_probas = torch.mean(log_probas)
+print(avg_log_probas)
+neg_avg_log_probas = avg_log_probas * -1
+
+logits_flat = logits.flatten(0,1)
+targets_flat = targets.flatten()
+
+loss = torch.nn.functional.cross_entropy(logits_flat , targets_flat)
+print(loss) 
+
+# perplexity --> Another loss measure like cross entropy 
+# measures how well the probability distribution predicted by model matches the actual distribution of words in dataset
+# more interpretable way of understanding model uncertainity in predicting next token 
+# lower perplexity score --> better predictions
+perplexity = torch.exp(loss)
+
